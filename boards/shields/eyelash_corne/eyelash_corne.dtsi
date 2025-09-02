@@ -153,7 +153,7 @@ zephyr_udc0: &usbd {
 	compatible = "nordic,nrf-twi";
     pinctrl-0 = <&i2c0_default>;
     pinctrl-1 = <&i2c0_sleep>;
-	oled: ssd1306@3c {
+  oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
         reg = <0x3c>;
         width = <128>;
@@ -162,10 +162,10 @@ zephyr_udc0: &usbd {
         page-offset = <0>;
         display-offset = <0>;
         multiplex-ratio = <31>;
-       // com-sequential;
+        segment-remap;
         com-invdir;
-		segment-remap; 
+        com-sequential;
         inversion-on;
         prechargep = <0x22>;
-	};
+    };
 };
